@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">todo-app</string>
+    <string name="tb_home_title">TODO LIST APP</string>
+    <string name="btn_livedata_text">1. LIVEDATA + EVENT</string>
+    <string name="btn_singlelivedata">2. SINGLELIVEDATA</string>
+    <string name="btn_sharedflow">3. SHAREDFLOW</string>
+    <string name="btn_sharedflow_sealed_class">4. SHAREDFLOW + SEALED CLASS</string>
+    <string name="btn_sharedflow_sealed_class_nlifecycle">5. SHAREDFLOW + SEALED CLASS + \nLIFECYCLE</string>
+    <string name="btn_eventflow_sealed_class_n_lifecycle">6. EVENTFLOW + SEALED CLASS + \n LIFECYCLE</string>
 </resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TextStyle -->
+    <style name="TextHeadLine20">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextHeadLine20.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextHeadLine20.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextHeadLine20.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextMedium14">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextMedium14.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TextMedium14.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.todo.app.ui.home.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_home_tb"
+                style="@style/TextHeadLine20.White.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/tb_home_title" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_livedata_event"
+            style="@style/TextMedium14.White.Bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_200"
+            android:paddingStart="20sp"
+            android:text="@string/btn_livedata_text"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tb_home" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_singlelivedata"
+            style="@style/TextMedium14.White.Bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_200"
+            android:paddingStart="20sp"
+            android:text="@string/btn_singlelivedata"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_livedata_event" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sharedflow"
+            style="@style/TextMedium14.White.Bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_200"
+            android:paddingStart="20sp"
+            android:text="@string/btn_sharedflow"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_singlelivedata" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sharedflow_sealedclass"
+            style="@style/TextMedium14.White.Bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_200"
+            android:paddingStart="20sp"
+            android:text="@string/btn_sharedflow_sealed_class"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_sharedflow" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sharedflow_sealedclass_lifecycle"
+            style="@style/TextMedium14.White.Bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_200"
+            android:paddingStart="20sp"
+            android:text="@string/btn_sharedflow_sealed_class_nlifecycle"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_sharedflow_sealedclass" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_eventflow_sealedclass_lifecycle"
+            style="@style/TextMedium14.White.Bold"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/purple_200"
+            android:paddingStart="20sp"
+            android:text="@string/btn_eventflow_sealed_class_n_lifecycle"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_sharedflow_sealedclass_lifecycle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
