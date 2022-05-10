@@ -1,0 +1,32 @@
+{
+  "todo": [
+    {
+      "title" : "Step1",
+      "contents" : "REPO, RECYCLERVIEW 구현"
+    },
+    {
+      "title" : "Step2",
+      "contents" : "ROOM 구현"
+    },
+    {
+      "title" : "Step3",
+      "contents" : "NETWORK 구현"
+    },
+    {
+      "title" : "Step4",
+      "contents" : "구현하면서 공부한거 블로그 정리하기"
+    },
+    {
+      "title" : "Step5",
+      "contents" : "취업하기"
+    },
+    {
+      "title" : "Step6",
+      "contents" : "코테공부하기"
+    },
+    {
+      "title" : "Step7",
+      "contents" : "아침형 인간되기"
+    }
+  ]
+}

@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.todo.app.common.EventObserver
 import com.todo.app.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +20,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -28,5 +30,23 @@ class HomeFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
+
+        setupNavigation()
+    }
+
+    private fun setupNavigation() {
+        viewModel.openStepOneFragmentEvent.observe(viewLifecycleOwner, EventObserver {
+            val action =
+                HomeFragmentDirections.actionHomeToStep1()
+            findNavController().navigate(action)
+        })
+
+        viewModel.openStepTwoFragmentEvent.observe(viewLifecycleOwner, {
+            val action =
+                HomeFragmentDirections.actionHomeToStep2()
+            findNavController().navigate(action)
+        })
+
+        // TODO STEP 3~6 navigation
     }
 }

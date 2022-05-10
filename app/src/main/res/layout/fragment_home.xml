@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.todo.app.ui.home.HomeViewModel" />
@@ -23,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_home_tb"
+                android:id="@+id/tv_home_title"
                 style="@style/TextHeadLine20.White.Bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/purple_200"
+            android:onClick="@{() -> viewModel.openStepOneFragment()}"
             android:paddingStart="20sp"
             android:text="@string/btn_livedata_text"
             android:textAlignment="textStart"
@@ -52,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/purple_200"
+            android:onClick="@{() -> viewModel.openStepTwoFragment()}"
             android:paddingStart="20sp"
             android:text="@string/btn_singlelivedata"
             android:textAlignment="textStart"
@@ -66,6 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/purple_200"
+            android:onClick="@{() -> viewModel.openStepThreeFragment()}"
             android:paddingStart="20sp"
             android:text="@string/btn_sharedflow"
             android:textAlignment="textStart"
@@ -80,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/purple_200"
+            android:onClick="@{() -> viewModel.openStepFourFragment()}"
             android:paddingStart="20sp"
             android:text="@string/btn_sharedflow_sealed_class"
             android:textAlignment="textStart"
@@ -94,6 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/purple_200"
+            android:onClick="@{() -> viewModel.openStepFiveFragment()}"
             android:paddingStart="20sp"
             android:text="@string/btn_sharedflow_sealed_class_nlifecycle"
             android:textAlignment="textStart"
@@ -108,6 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@color/purple_200"
+            android:onClick="@{() -> viewModel.openStepSixFragment()}"
             android:paddingStart="20sp"
             android:text="@string/btn_eventflow_sealed_class_n_lifecycle"
             android:textAlignment="textStart"

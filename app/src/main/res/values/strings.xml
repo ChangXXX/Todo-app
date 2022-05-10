@@ -1,10 +1,21 @@
 <resources>
     <string name="app_name">todo-app</string>
     <string name="tb_home_title">TODO LIST APP</string>
+    <string name="tb_step1_title">STEP1 JSON ASSET</string>
+    <string name="tb_step2_title">STEP2 ROOM</string>
+    <string name="tb_step3_title">STEP3 NETWORK</string>
+    <string name="tb_step4_title">STEP4</string>
+    <string name="tb_step5_title">STEP5</string>
+    <string name="tb_step6_title">STEP6</string>
+
     <string name="btn_livedata_text">1. LIVEDATA + EVENT</string>
     <string name="btn_singlelivedata">2. SINGLELIVEDATA</string>
     <string name="btn_sharedflow">3. SHAREDFLOW</string>
     <string name="btn_sharedflow_sealed_class">4. SHAREDFLOW + SEALED CLASS</string>
     <string name="btn_sharedflow_sealed_class_nlifecycle">5. SHAREDFLOW + SEALED CLASS + \nLIFECYCLE</string>
     <string name="btn_eventflow_sealed_class_n_lifecycle">6. EVENTFLOW + SEALED CLASS + \n LIFECYCLE</string>
+    <string name="btn_label_todo_add">할 일 추가하기</string>
+    <string name="edt_hint_todo_title">TITLE</string>
+    <string name="edt_hint_todo_content">CONTENT</string>
+
 </resources>

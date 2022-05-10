@@ -10,7 +10,39 @@
         android:name="com.todo.app.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
-
+        <action
+            android:id="@+id/action_home_to_step1"
+            app:destination="@id/navigation_step1" />
+        <action
+            android:id="@+id/action_home_to_step2"
+            app:destination="@id/navigation_step2" />
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_step1"
+        android:name="com.todo.app.ui.step1.Step1Fragment"
+        android:label="Step1Fragment"
+        tools:layout="@layout/fragment_step1">
+        <action
+            android:id="@+id/action_step1_to_add"
+            app:destination="@id/navigation_add" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_step2"
+        android:name="com.todo.app.ui.step2.Step2Fragment"
+        android:label="Step2Fragment"
+        tools:layout="@layout/fragment_step2">
+        <action
+            android:id="@+id/action_step2_to_add"
+            app:destination="@id/navigation_add" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.todo.app.ui.add.AddFragment"
+        android:label="AddFragment"
+        tools:layout="@layout/fragment_add">
+
+    </fragment>
 </navigation>
