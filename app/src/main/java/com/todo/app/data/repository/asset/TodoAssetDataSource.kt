@@ -1,9 +1,8 @@
-package com.todo.app.repository
+package com.todo.app.data.repository.asset
 
 import com.google.gson.Gson
 import com.todo.app.common.AssetLoader
-import com.todo.app.data.Todo
-import com.todo.app.data.TodoAssetData
+import com.todo.app.data.model.TodoAssetData
 import javax.inject.Inject
 
 class TodoAssetDataSource @Inject constructor(private val assetLoader: AssetLoader) :

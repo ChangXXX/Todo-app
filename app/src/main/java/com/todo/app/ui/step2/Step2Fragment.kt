@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.todo.app.common.TodoAdapter
 import com.todo.app.databinding.FragmentStep2Binding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,6 +32,13 @@ class Step2Fragment : Fragment() {
         binding.viewModel = viewModel
 
         setNavigationBack()
+        initObservers()
+        setListAdapter()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadTodos()
     }
 
     private fun setNavigationBack() {
@@ -41,7 +49,16 @@ class Step2Fragment : Fragment() {
 
     private fun initObservers() {
         viewModel.addTodoEvent.observe(viewLifecycleOwner, {
+            val action = Step2FragmentDirections.actionStep2ToAdd()
+            findNavController().navigate(action)
+        })
+    }
 
+    private fun setListAdapter() {
+        val todoAdapter = TodoAdapter()
+        binding.rvStep2List.adapter = todoAdapter
+        viewModel.todos.observe(viewLifecycleOwner, {
+            todoAdapter.submitList(it)
         })
     }
 }

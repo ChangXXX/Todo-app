@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.todo.app.data.Todo
+import com.todo.app.data.model.Todo
 import com.todo.app.databinding.ItemTodoBinding
 
 class TodoAdapter() : ListAdapter<Todo, TodoAdapter.TodoViewHolder>(TodoDiffCallback()) {

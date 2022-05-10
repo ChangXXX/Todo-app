@@ -34,7 +34,7 @@ class Step1Fragment : Fragment() {
 
         setNavigationBack()
         initObservers()
-        setTodolist()
+        setListAdapter()
     }
 
     private fun setNavigationBack() {
@@ -51,7 +51,7 @@ class Step1Fragment : Fragment() {
         })
     }
 
-    private fun setTodolist() {
+    private fun setListAdapter() {
         val todoAdapter = TodoAdapter()
         binding.rvStep1List.adapter = todoAdapter
         viewModel.todos.observe(viewLifecycleOwner) {

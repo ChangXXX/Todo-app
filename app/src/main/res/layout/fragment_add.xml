@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TODO 추가" />
+                android:text="@string/tb_add_title" />
         </androidx.appcompat.widget.Toolbar>
 
         <EditText
@@ -44,12 +44,12 @@
             app:layout_constraintTop_toBottomOf="@id/tb_add" />
 
         <EditText
-            android:id="@+id/edt_todo_content"
+            android:id="@+id/edt_todo_contents"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:background="@android:color/transparent"
-            android:hint="@string/edt_hint_todo_content"
+            android:hint="@string/edt_hint_todo_contents"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_todo_title" />
@@ -69,6 +69,7 @@
                 android:layout_height="48dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/button_gradient_purple"
+                android:onClick="@{() -> viewModel.addAddTodoEvent()}"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="@string/btn_label_todo_add"

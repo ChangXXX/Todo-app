@@ -7,7 +7,7 @@
 
         <variable
             name="todo"
-            type="com.todo.app.data.Todo" />
+            type="com.todo.app.data.model.Todo" />
     </data>
 
     <androidx.cardview.widget.CardView

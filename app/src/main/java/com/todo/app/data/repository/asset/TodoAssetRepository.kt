@@ -1,6 +1,6 @@
-package com.todo.app.repository
+package com.todo.app.data.repository.asset
 
-import com.todo.app.data.TodoAssetData
+import com.todo.app.data.model.TodoAssetData
 import javax.inject.Inject
 
 class TodoAssetRepository @Inject constructor(
