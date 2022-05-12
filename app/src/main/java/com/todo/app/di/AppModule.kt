@@ -3,7 +3,7 @@ package com.todo.app.di
 import android.content.Context
 import androidx.room.Room
 import com.todo.app.api.TodoService
-import com.todo.app.common.AssetLoader
+import com.todo.app.ui.common.AssetLoader
 import com.todo.app.data.database.AppDatabase
 import com.todo.app.data.database.TodoDao
 import com.todo.app.data.repository.asset.TodoAssetDataSource

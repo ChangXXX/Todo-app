@@ -3,9 +3,9 @@ package com.todo.app.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.todo.app.common.Event
-import com.todo.app.common.MutableSingleLiveData
-import com.todo.app.common.SingleLiveData
+import com.todo.app.ui.common.Event
+import com.todo.app.ui.common.MutableSingleLiveData
+import com.todo.app.ui.common.SingleLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

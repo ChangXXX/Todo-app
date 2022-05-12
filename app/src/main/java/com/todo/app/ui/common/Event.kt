@@ -1,4 +1,4 @@
-package com.todo.app.common
+package com.todo.app.ui.common
 
 import androidx.lifecycle.Observer
 

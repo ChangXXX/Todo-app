@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.todo.app.common.TodoAdapter
+import com.todo.app.ui.common.TodoAdapter
 import com.todo.app.databinding.FragmentStep2Binding
 import dagger.hilt.android.AndroidEntryPoint
 

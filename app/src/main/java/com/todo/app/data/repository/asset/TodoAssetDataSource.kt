@@ -1,7 +1,7 @@
 package com.todo.app.data.repository.asset
 
 import com.google.gson.Gson
-import com.todo.app.common.AssetLoader
+import com.todo.app.ui.common.AssetLoader
 import com.todo.app.data.model.TodoAssetData
 import javax.inject.Inject
 

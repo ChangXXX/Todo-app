@@ -1,4 +1,4 @@
-package com.todo.app.common
+package com.todo.app.ui.common
 
 class MutableSingleLiveData<T> : SingleLiveData<T> {
 

@@ -2,8 +2,8 @@ package com.todo.app.ui.add
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.todo.app.common.MutableSingleLiveData
-import com.todo.app.common.SingleLiveData
+import com.todo.app.ui.common.MutableSingleLiveData
+import com.todo.app.ui.common.SingleLiveData
 import com.todo.app.data.model.Todo
 import com.todo.app.data.repository.local.TodoLocalRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
