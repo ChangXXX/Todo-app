@@ -1,4 +1,4 @@
-package com.todo.app.data.repository.local
+package com.todo.app.data.repository
 
 import com.todo.app.data.model.Todo
 
