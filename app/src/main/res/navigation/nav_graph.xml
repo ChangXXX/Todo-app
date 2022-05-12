@@ -23,9 +23,6 @@
         android:name="com.todo.app.ui.step1.Step1Fragment"
         android:label="Step1Fragment"
         tools:layout="@layout/fragment_step1">
-        <action
-            android:id="@+id/action_step1_to_add"
-            app:destination="@id/navigation_add" />
     </fragment>
 
     <fragment

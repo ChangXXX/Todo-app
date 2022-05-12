@@ -16,9 +16,6 @@ class Step1ViewModel @Inject constructor(
     private val todoAssetRepository: TodoAssetRepository
 ) : ViewModel() {
 
-    private val _addTodoEvent = MutableLiveData<Event<Unit>>()
-    val addTodoEvent: LiveData<Event<Unit>> = _addTodoEvent
-
     private val _todos = MutableLiveData<List<Todo>>()
     val todos: LiveData<List<Todo>> = _todos
 
@@ -33,9 +30,5 @@ class Step1ViewModel @Inject constructor(
                 _todos.value = todoAssetData.todos
             }
         }
-    }
-
-    fun openAddTodoEvent() {
-        _addTodoEvent.value = Event(Unit)
     }
 }

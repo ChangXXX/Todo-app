@@ -33,7 +33,6 @@ class Step1Fragment : Fragment() {
         binding.viewModel = viewModel
 
         setNavigationBack()
-        initObservers()
         setListAdapter()
     }
 
@@ -43,13 +42,6 @@ class Step1Fragment : Fragment() {
         }
     }
 
-    private fun initObservers() {
-        viewModel.addTodoEvent.observe(viewLifecycleOwner, EventObserver {
-            val action =
-                Step1FragmentDirections.actionStep1ToAdd()
-            findNavController().navigate(action)
-        })
-    }
 
     private fun setListAdapter() {
         val todoAdapter = TodoAdapter()
