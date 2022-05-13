@@ -43,21 +43,15 @@ class AddFragment : Fragment() {
     }
 
     private fun initObservers() {
-        viewModel.title.observe(viewLifecycleOwner, {
-
-        })
-
-        viewModel.contents.observe(viewLifecycleOwner, {
-
-        })
-
         viewModel.addTodoEvent.observe(viewLifecycleOwner, {
             val title = binding.edtTodoTitle.text.toString()
             val contents = binding.edtTodoContents.text.toString()
+            val room = binding.radiobtnRoom.isChecked
+
             if (title.isEmpty() || contents.isEmpty()) {
                 Toast.makeText(context, "TITLE or CONTENTS is Empty", Toast.LENGTH_SHORT).show()
             } else {
-                viewModel.addTodo(Todo(title, contents))
+                viewModel.addTodo(Todo(title, contents), room)
                 Toast.makeText(context, "Making Todo", Toast.LENGTH_SHORT).show()
                 findNavController().navigateUp()
             }

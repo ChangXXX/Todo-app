@@ -63,6 +63,7 @@
                 android:layout_height="48dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/button_gradient_purple"
+                android:onClick="@{()->viewModel.openAddTodoEvent()}"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:text="@string/btn_label_todo_add"

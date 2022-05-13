@@ -23,6 +23,7 @@
         android:name="com.todo.app.ui.step1.Step1Fragment"
         android:label="Step1Fragment"
         tools:layout="@layout/fragment_step1">
+
     </fragment>
 
     <fragment
@@ -32,6 +33,16 @@
         tools:layout="@layout/fragment_step2">
         <action
             android:id="@+id/action_step2_to_add"
+            app:destination="@id/navigation_add" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_step3"
+        android:name="com.todo.app.ui.step3.Step3Fragment"
+        android:label="Step3Fragment"
+        tools:layout="@layout/fragment_step3">
+        <action
+            android:id="@+id/action_step3_to_add"
             app:destination="@id/navigation_add" />
     </fragment>
 

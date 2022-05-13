@@ -62,6 +62,32 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_todo_add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_todo_add">
+
+                <RadioButton
+                    android:id="@+id/radiobtn_room"
+                    style="@style/TextRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:checked="true"
+                    android:text="@string/label_add_room" />
+
+                <RadioButton
+                    android:id="@+id/radiobtn_network"
+                    style="@style/TextRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="7dp"
+                    android:text="@string/lable_add_network" />
+
+            </RadioGroup>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_todo_add"
                 style="@style/TextTodoTitle.White.Bold"

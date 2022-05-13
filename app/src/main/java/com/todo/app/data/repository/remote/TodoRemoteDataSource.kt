@@ -5,7 +5,9 @@ import com.todo.app.data.repository.TodoDataSource
 import com.todo.app.api.TodoService
 import javax.inject.Inject
 
-class TodoRemoteDataSource @Inject constructor(private val todoService: TodoService): TodoDataSource {
+class TodoRemoteDataSource @Inject constructor(
+    private val todoService: TodoService
+) : TodoDataSource {
     override suspend fun addTodo(todo: Todo) {
         todoService.addTodo(todo)
     }

@@ -18,5 +18,7 @@
     <string name="edt_hint_todo_title">TITLE</string>
     <string name="edt_hint_todo_contents">CONTENTS</string>
     <string name="tb_add_title">ADD TODO</string>
+    <string name="label_add_room">ROOM에 추가</string>
+    <string name="lable_add_network">Network에 추가</string>
 
 </resources>
