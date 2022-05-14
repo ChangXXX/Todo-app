@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.todo.app.R
 import com.todo.app.ui.common.EventObserver
 import com.todo.app.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -47,6 +51,14 @@ class HomeFragment : Fragment() {
             findNavController().navigate(action)
         })
 
-        // TODO STEP 3~6 navigation
+        lifecycleScope.launch {
+            viewModel.openStepThreeFragmentEvent.collect {
+                if(findNavController().currentDestination?.id == R.id.navigation_home){
+                    val action =
+                        HomeFragmentDirections.actionHomeToStep3()
+                    findNavController().navigate(action)
+                }
+            }
+        }
     }
 }

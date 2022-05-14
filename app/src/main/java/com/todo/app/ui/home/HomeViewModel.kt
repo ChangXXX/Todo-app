@@ -3,10 +3,14 @@ package com.todo.app.ui.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.todo.app.ui.common.Event
 import com.todo.app.ui.common.MutableSingleLiveData
 import com.todo.app.ui.common.SingleLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,8 +22,8 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     private val _openStepTwoFragmentEvent = MutableSingleLiveData<Unit>()
     val openStepTwoFragmentEvent: SingleLiveData<Unit> = _openStepTwoFragmentEvent
 
-    private val _openStepThreeFragmentEvent = MutableSingleLiveData<Unit>()
-    val openStepThreeFragmentEvent: SingleLiveData<Unit> = _openStepThreeFragmentEvent
+    private val _openStepThreeFragmentEvent = MutableSharedFlow<Unit>()
+    val openStepThreeFragmentEvent = _openStepThreeFragmentEvent.asSharedFlow()
 
     private val _openStepFourFragmentEvent = MutableSingleLiveData<Unit>()
     val openStepFourFragmentEvent: SingleLiveData<Unit> = _openStepFourFragmentEvent
@@ -35,7 +39,13 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     }
 
     fun openStepTwoFragment() = _openStepTwoFragmentEvent.setValue(Unit)
-    fun openStepThreeFragment() = _openStepThreeFragmentEvent.setValue(Unit)
+
+    fun openStepThreeFragment() {
+        viewModelScope.launch {
+            _openStepThreeFragmentEvent.emit(Unit)
+        }
+    }
+
     fun openStepFourFragment() = _openStepFourFragmentEvent.setValue(Unit)
     fun openStepFiveFragment() = _openStepFiveFragmentEvent.setValue(Unit)
     fun openStepSixFragment() = _openStepSixFragmentEvent.setValue(Unit)
