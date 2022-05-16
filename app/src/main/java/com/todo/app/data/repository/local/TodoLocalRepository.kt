@@ -7,19 +7,19 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class TodoLocalRepository @Inject constructor(
-    private val localDataSource: TodoLocalDataSource,
+    private val localLocalDataSource: TodoLocalLocDataSource,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) {
 
     suspend fun addTodo(todo: Todo) {
         withContext(ioDispatcher) {
-            localDataSource.addTodo(todo)
+            localLocalDataSource.addTodo(todo)
         }
     }
 
     suspend fun getTodoItems(): List<Todo> {
         return withContext(ioDispatcher) {
-            localDataSource.getTodos()
+            localLocalDataSource.getTodos()
         }
     }
 }

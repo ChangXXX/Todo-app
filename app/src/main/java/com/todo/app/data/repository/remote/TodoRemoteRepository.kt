@@ -11,7 +11,7 @@ class TodoRemoteRepository @Inject constructor(
         todoRemoteDataSource.addTodo(todo)
     }
 
-    suspend fun getTodos(): List<Todo> {
+    suspend fun getTodos(): Map<String, Todo> {
         return todoRemoteDataSource.getTodos()
     }
 }

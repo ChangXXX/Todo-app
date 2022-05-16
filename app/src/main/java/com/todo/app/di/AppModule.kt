@@ -8,9 +8,10 @@ import com.todo.app.data.database.AppDatabase
 import com.todo.app.data.database.TodoDao
 import com.todo.app.data.repository.asset.TodoAssetDataSource
 import com.todo.app.data.repository.asset.TodoAssetRepository
-import com.todo.app.data.repository.asset.TodoDataSource
-import com.todo.app.data.repository.local.TodoLocalDataSource
+import com.todo.app.data.repository.local.TodoLocDataSource
+import com.todo.app.data.repository.local.TodoLocalLocDataSource
 import com.todo.app.data.repository.local.TodoLocalRepository
+import com.todo.app.data.repository.remote.TodoRemDataSource
 import com.todo.app.data.repository.remote.TodoRemoteDataSource
 import com.todo.app.data.repository.remote.TodoRemoteRepository
 import dagger.Module
@@ -38,7 +39,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideTodoAssetDataSource(assetLoader: AssetLoader): TodoDataSource {
+    fun provideTodoAssetDataSource(assetLoader: AssetLoader): TodoAssetDataSource {
         return TodoAssetDataSource(assetLoader)
     }
 
@@ -66,17 +67,17 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesTodoLocalDataSource(todoDao: TodoDao): com.todo.app.data.repository.TodoDataSource {
-        return TodoLocalDataSource(todoDao)
+    fun providesTodoLocalDataSource(todoDao: TodoDao): TodoLocDataSource {
+        return TodoLocalLocDataSource(todoDao)
     }
 
     @Provides
     @Singleton
     fun providesTodoLocalRepository(
-        localDataSource: TodoLocalDataSource,
+        localLocalDataSource: TodoLocalLocDataSource,
         ioDispatcher: CoroutineDispatcher
     ): TodoLocalRepository {
-        return TodoLocalRepository(localDataSource, ioDispatcher)
+        return TodoLocalRepository(localLocalDataSource, ioDispatcher)
     }
 
     // step 3 retrofit
@@ -88,7 +89,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesTodoRemoteDataSource(todoService: TodoService): com.todo.app.data.repository.TodoDataSource {
+    fun providesTodoRemoteDataSource(todoService: TodoService): TodoRemDataSource {
         return TodoRemoteDataSource(todoService)
     }
 

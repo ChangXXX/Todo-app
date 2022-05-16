@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.todo.app.databinding.FragmentStep3Binding
 import com.todo.app.ui.common.TodoAdapter
@@ -39,25 +41,28 @@ class Step3Fragment : Fragment() {
         initObservers()
     }
 
-    private fun initObservers() {
-        lifecycleScope.launch {
-            launch {
-                viewModel.addTodoEvent.collect {
-                    val action = Step3FragmentDirections.actionStep3ToAdd()
-                    findNavController().navigate(action)
-                }
-            }
-            launch {
-                viewModel.todos.collect{ todos ->
-                    todoAdapter.submitList(todos)
-                }
-            }
-        }
-    }
-
     private fun setListAdapter() {
         todoAdapter = TodoAdapter()
         binding.rvStep3List.adapter = todoAdapter
+    }
+
+    private fun initObservers() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.addTodoEvent.collect {
+                        val action = Step3FragmentDirections.actionStep3ToAdd()
+                        findNavController().navigate(action)
+                    }
+                }
+                launch {
+                    viewModel.todos.collect { todos ->
+                        todoAdapter.submitList(todos)
+                    }
+                }
+                viewModel.loadTodos()
+            }
+        }
     }
 
 }

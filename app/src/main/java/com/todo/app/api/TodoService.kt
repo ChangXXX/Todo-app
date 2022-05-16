@@ -5,16 +5,17 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface TodoService {
 
     @GET("todo.json")
-    suspend fun getTodos(): List<Todo>
+    suspend fun getTodos(): Map<String, Todo>
 
     @POST("todo.json")
-    suspend fun addTodo(todo: Todo)
+    suspend fun addTodo(@Body todo: Todo)
 
     companion object {
 

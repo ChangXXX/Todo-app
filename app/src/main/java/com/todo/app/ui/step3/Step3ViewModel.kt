@@ -1,5 +1,6 @@
 package com.todo.app.ui.step3
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.todo.app.data.model.Todo
@@ -34,8 +35,9 @@ class Step3ViewModel @Inject constructor(
     fun loadTodos() {
         viewModelScope.launch {
             val items = todoRemoteRepository.getTodos()
+            Log.d("TODOS", "${items}")
             if (!items.isNullOrEmpty()) {
-                _todos.emit(items)
+                _todos.emit(items.values.toList())
             }
         }
     }

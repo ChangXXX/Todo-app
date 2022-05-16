@@ -1,8 +1,8 @@
-package com.todo.app.data.repository
+package com.todo.app.data.repository.local
 
 import com.todo.app.data.model.Todo
 
-interface TodoDataSource {
+interface TodoLocDataSource {
 
     suspend fun addTodo(todo: Todo)
 
