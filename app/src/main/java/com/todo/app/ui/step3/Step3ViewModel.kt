@@ -35,7 +35,7 @@ class Step3ViewModel @Inject constructor(
     fun loadTodos() {
         viewModelScope.launch {
             val items = todoRemoteRepository.getTodos()
-            Log.d("TODOS", "${items}")
+
             if (!items.isNullOrEmpty()) {
                 _todos.emit(items.values.toList())
             }

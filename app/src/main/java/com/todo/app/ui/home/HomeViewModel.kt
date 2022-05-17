@@ -1,5 +1,6 @@
 package com.todo.app.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,14 +26,8 @@ class HomeViewModel @Inject constructor() : ViewModel() {
     private val _openStepThreeFragmentEvent = MutableSharedFlow<Unit>()
     val openStepThreeFragmentEvent = _openStepThreeFragmentEvent.asSharedFlow()
 
-    private val _openStepFourFragmentEvent = MutableSingleLiveData<Unit>()
-    val openStepFourFragmentEvent: SingleLiveData<Unit> = _openStepFourFragmentEvent
-
-    private val _openStepFiveFragmentEvent = MutableSingleLiveData<Unit>()
-    val openStepFiveFragmentEvent: SingleLiveData<Unit> = _openStepFiveFragmentEvent
-
-    private val _openStepSixFragmentEvent = MutableSingleLiveData<Unit>()
-    val openStepSixFragmentEvent: SingleLiveData<Unit> = _openStepSixFragmentEvent
+    private val _eventFlow = MutableSharedFlow<OpenFragmentEvent>()
+    val eventFlow = _eventFlow.asSharedFlow()
 
     fun openStepOneFragment() {
         _openStepOneFragmentEvent.value = Event(Unit)
@@ -46,7 +41,19 @@ class HomeViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    fun openStepFourFragment() = _openStepFourFragmentEvent.setValue(Unit)
-    fun openStepFiveFragment() = _openStepFiveFragmentEvent.setValue(Unit)
-    fun openStepSixFragment() = _openStepSixFragmentEvent.setValue(Unit)
+    fun openFour() {
+        openFragmentEvent(OpenFragmentEvent.StepFour)
+    }
+
+    private fun openFragmentEvent(event: OpenFragmentEvent) {
+        viewModelScope.launch {
+            _eventFlow.emit(event)
+        }
+    }
+
+    sealed class OpenFragmentEvent {
+        object StepFour : OpenFragmentEvent()
+        object StepFive : OpenFragmentEvent()
+        object StepSix : OpenFragmentEvent()
+    }
 }

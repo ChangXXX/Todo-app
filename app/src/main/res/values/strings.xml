@@ -3,10 +3,10 @@
     <string name="tb_home_title">TODO LIST APP</string>
     <string name="tb_step1_title">STEP1 JSON ASSET</string>
     <string name="tb_step2_title">STEP2 ROOM</string>
-    <string name="tb_step3_title">STEP3 retrofit</string>
-    <string name="tb_step4_title">STEP4</string>
-    <string name="tb_step5_title">STEP5</string>
-    <string name="tb_step6_title">STEP6</string>
+    <string name="tb_step3_title">STEP3 RETROFIT</string>
+    <string name="tb_step4_title">STEP4 SHARED + SEALED</string>
+    <string name="tb_step5_title">STEP5 STEP4 + LIFECYCLE</string>
+    <string name="tb_step6_title">STEP6 ROOM + RETROFIT</string>
 
     <string name="btn_livedata_text">1. LIVEDATA + EVENT</string>
     <string name="btn_singlelivedata">2. SINGLELIVEDATA</string>
@@ -20,5 +20,6 @@
     <string name="tb_add_title">ADD TODO</string>
     <string name="label_add_room">ROOM에 추가</string>
     <string name="lable_add_network">Network에 추가</string>
+    <string name="btn_label_toast">Toast Event</string>
 
 </resources>
