@@ -14,14 +14,18 @@ Hilt, MVVM, Coroutine, Retrofit, Firebase Realtime DB, Room, Navigation
 - MVVM 이벤트 처리 - SingleLiveData
 - Todo data - Room 사용 (load, add 가능)
 
-아직 밑으로 미구현
-
 ## Step 3
 - MVVM 이벤트 처리 - SharedFlow
 - Todo data - Firebase Realtime DB 사용 (load, add 가능)
 
 ## Step 4
+- MVVM 이벤트 처리 - SharedFlow + SEALED CLASS
+- Todo data - Firebase Realtime DB 사용 (load, add 가능)
 
-## Step 5
+## Step 5 예정
+- MVVM 이벤트 처리 - SharedFlow + SEALED CLASS + LIFECYCLE
+- Todo data - Firebase Realtime DB 사용 (load, add 가능)
 
-## Step 6
+## Step 6 예정
+- MVVM 이벤트 처리 - EVENTFLOW + SEALED CLASS + LIFECYCLE
+- Todo data - ROOM + Firebase Realtime DB 사용 (load, add 가능)
