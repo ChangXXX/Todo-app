@@ -83,7 +83,13 @@ class HomeFragment : Fragment() {
             }
         }
         is HomeViewModel.OpenFragmentEvent.StepFive -> {
-
+            if (findNavController().currentDestination?.id == R.id.navigation_home) {
+                val action =
+                    HomeFragmentDirections.actionHomeToStep5()
+                findNavController().navigate(action)
+            } else{
+                Log.d("NAVIGATION", "Destination is diff")
+            }
         }
         is HomeViewModel.OpenFragmentEvent.StepSix -> {
 

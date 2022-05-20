@@ -45,6 +45,10 @@ class HomeViewModel @Inject constructor() : ViewModel() {
         openFragmentEvent(OpenFragmentEvent.StepFour)
     }
 
+    fun openFive() {
+        openFragmentEvent(OpenFragmentEvent.StepFive)
+    }
+
     private fun openFragmentEvent(event: OpenFragmentEvent) {
         viewModelScope.launch {
             _eventFlow.emit(event)

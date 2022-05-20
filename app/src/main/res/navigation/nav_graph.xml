@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_home_to_step4"
             app:destination="@id/navigation_step4" />
+        <action
+            android:id="@+id/action_home_to_step5"
+            app:destination="@id/navigation_step5" />
     </fragment>
 
     <fragment
@@ -61,7 +64,16 @@
         <action
             android:id="@+id/action_step4_to_add"
             app:destination="@id/navigation_add" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/navigation_step5"
+        android:name="com.todo.app.ui.step5.Step5Fragment"
+        android:label="Step5Fragment"
+        tools:layout="@layout/fragment_step5">
+        <action
+            android:id="@+id/action_step5_to_add"
+            app:destination="@id/navigation_add" />
     </fragment>
 
     <fragment
