@@ -5,14 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.todo.app.R
-import com.todo.app.ui.common.EventObserver
 import com.todo.app.databinding.FragmentHomeBinding
+import com.todo.app.ui.common.EventObserver
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -87,12 +86,18 @@ class HomeFragment : Fragment() {
                 val action =
                     HomeFragmentDirections.actionHomeToStep5()
                 findNavController().navigate(action)
-            } else{
+            } else {
                 Log.d("NAVIGATION", "Destination is diff")
             }
         }
         is HomeViewModel.OpenFragmentEvent.StepSix -> {
-
+            if (findNavController().currentDestination?.id == R.id.navigation_home) {
+                val action =
+                    HomeFragmentDirections.actionHomeToStep6()
+                findNavController().navigate(action)
+            } else {
+                Log.d("NAVIGATION", "Destination is diff")
+            }
         }
     }
 }
